@@ -1,0 +1,19 @@
+<div class="container-fluid">
+  <a routerLink="/register" class="float-right">Register</a>
+  <a routerLink="/home" class="float-right">Home &nbsp;</a>
+
+  <h1>Login</h1>
+
+  <input [(ngModel)]="username"
+         placeholder="username"
+         class="form-control"/>
+  <input [(ngModel)]="password"
+         placeholder="password"
+         class="form-control"/>
+  <br/>
+  <button (click)="login(username, password)"
+          class="btn btn-primary btn-block">
+    Login
+  </button>
+
+</div>
