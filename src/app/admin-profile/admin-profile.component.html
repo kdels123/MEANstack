@@ -1,0 +1,22 @@
+<div class="container-fluid">
+  <a (click)="logout()" class="float-right" style="color: dodgerblue">Logout</a>
+  <a routerLink="/home" class="float-right" style="color: dodgerblue">Home &nbsp; </a>
+
+  <h1>Profile</h1>
+
+  <input [(ngModel)]="username"
+         placeholder="username"
+         class="form-control"/>
+  <input [(ngModel)]="firstName"
+         placeholder="first name"
+         class="form-control"/>
+  <input [(ngModel)]="lastNAme"
+         placeholder="lastName"
+         class="form-control"/>
+  <input [(ngModel)]="email"
+         placeholder="email"
+         class="form-control"/>
+  <br/>
+  <a routerLink="/home" class="btn btn-primary btn-block" style="color: white" role="button">Go To Admin Page</a>
+
+</div>

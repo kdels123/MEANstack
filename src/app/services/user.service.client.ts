@@ -3,7 +3,10 @@ export class UserServiceClient {
   createUser(username, password) {
     const user = {
       username: username,
-      password: password
+      password: password,
+      firstName: '',
+      lastName: '',
+      email: ''
     };
     return fetch('http://localhost:4000/api/user', {
       body: JSON.stringify(user),
@@ -12,7 +15,7 @@ export class UserServiceClient {
       headers: {
         'content-type': 'application/json'
       }
-    });
+    }).then(response => response.json());
   }
 
   profile() {
@@ -49,6 +52,25 @@ export class UserServiceClient {
     return fetch('http://localhost:4000/api/user' + userId)
       .then(response => response.json());
   }
+
+  updateUser(username, firstName, lastName, email) {
+    const user = {
+      username: username,
+      firstName: firstName,
+      lastName: lastName,
+      email: email
+    };
+    return fetch('http://localhost:4000/api/user', {
+      body: JSON.stringify(user),
+      credentials: 'include', // include, same-origin, *omit
+      method: 'put',
+      headers: {
+        'content-type': 'application/json'
+      }
+    });
+  }
+
+
 
 
 }

@@ -13,11 +13,17 @@ export class LoginComponent implements OnInit {
   password;
   login(username, password) {
     console.log([username, password]);
-    this.service.login(username, password)
-      .then(() => {
-        this.router.navigate(['profile']);
-      });
-    // this.router.navigate(['profile']);
+    if (username === 'admin' && password === 'admin') {
+      this.service.login(username, password)
+        .then(() => {
+          this.router.navigate(['profile/admin']);
+        });
+    } else {
+      this.service.login(username, password)
+        .then(() => {
+          this.router.navigate(['profile']);
+        });
+    }
   }
 
   constructor(private router: Router, private service: UserServiceClient) { }

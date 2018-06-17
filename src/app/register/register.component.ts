@@ -14,6 +14,7 @@ export class RegisterComponent implements OnInit {
   username;
   password;
   password2;
+  user;
   register(username, password, password2) {
     console.log([username, password, password2]);
     this.service

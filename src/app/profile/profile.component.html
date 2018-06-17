@@ -1,5 +1,8 @@
 
 <div class="container-fluid">
+  <a (click)="logout()" class="float-right" style="color: dodgerblue">Logout</a>
+  <a routerLink="/home" class="float-right">Home &nbsp; </a>
+
   <h1>Profile</h1>
 
   <input [(ngModel)]="username"
@@ -8,13 +11,14 @@
   <input [(ngModel)]="firstName"
          placeholder="first name"
          class="form-control"/>
-  <input [(ngModel)]="lastName"
+  <input [(ngModel)]="l"
          placeholder="lastName"
          class="form-control"/>
-  <input [(ngModel)]="email"
+  <input [(ngModel)]="user.email"
          placeholder="email"
          class="form-control"/>
-  <button (click)="update()"
+  <br/>
+  <button (click)="update(username, firstName, lastName, email)"
           class="btn btn-primary btn-block">
     Update
   </button>
@@ -27,8 +31,5 @@
       <button class="float-right btn btn-primary">Un-Enroll</button>
     </li>
   </ul>
-
-  <a (click)="logout()">Logout</a>
-  <a routerLink="/home">Home</a>
 
 </div>

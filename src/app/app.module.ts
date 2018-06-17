@@ -2,7 +2,6 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 
 import { AppComponent } from './app.component';
-import { HellWorldComponent } from './hell-world/hell-world.component';
 import {FormsModule} from '@angular/forms';
 import {CourseNavigatorServiceClient} from './services/course-navigator.service.client';
 import { CourseNavigatorComponent } from './course-navigator/course-navigator.component';
@@ -23,11 +22,11 @@ import { RegisterComponent } from './register/register.component';
 import {UserServiceClient} from './services/user.service.client';
 import { SectionListComponent } from './section-list/section-list.component';
 import {SectionServiceClient} from './services/section.service.client';
+import { AdminProfileComponent } from './admin-profile/admin-profile.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    HellWorldComponent,
     CourseNavigatorComponent,
     WhiteBoardComponent,
     CourseGridComponent,
@@ -38,7 +37,8 @@ import {SectionServiceClient} from './services/section.service.client';
     LoginComponent,
     ProfileComponent,
     RegisterComponent,
-    SectionListComponent
+    SectionListComponent,
+    AdminProfileComponent
   ],
   imports: [
     BrowserModule,

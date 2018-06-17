@@ -1,20 +1,20 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { HellWorldComponent } from './hell-world.component';
+import { AdminProfileComponent } from './admin-profile.component';
 
-describe('HellWorldComponent', () => {
-  let component: HellWorldComponent;
-  let fixture: ComponentFixture<HellWorldComponent>;
+describe('AdminProfileComponent', () => {
+  let component: AdminProfileComponent;
+  let fixture: ComponentFixture<AdminProfileComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ HellWorldComponent ]
+      declarations: [ AdminProfileComponent ]
     })
     .compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(HellWorldComponent);
+    fixture = TestBed.createComponent(AdminProfileComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

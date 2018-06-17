@@ -31,12 +31,20 @@ export class SectionListComponent implements OnInit {
       });
   }
 
+  delete(section) {
+    this.service.deleteSection(section._id).then(() => {
+      this.loadSections(this.courseId);
+    });
+  }
+
   enroll(section) {
     // alert(section._id);
     this.service.enrollStudentInSection(section._id).then(() => {
       this.router.navigate(['profile']);
     });
   }
+
+
 
   ngOnInit() {
   }
