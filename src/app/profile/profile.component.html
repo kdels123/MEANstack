@@ -11,7 +11,7 @@
   <input [(ngModel)]="firstName"
          placeholder="first name"
          class="form-control"/>
-  <input [(ngModel)]="l"
+  <input [(ngModel)]="lastName"
          placeholder="lastName"
          class="form-control"/>
   <input [(ngModel)]="user.email"
@@ -27,8 +27,7 @@
   <ul class="list-group">
     <li *ngFor="let enrollment of sections" class="list-group-item">
       {{enrollment.section.name}}
-      ({{enrollment.section.seats}})
-      <button class="float-right btn btn-primary">Un-Enroll</button>
+      <button (click)="unenroll(enrollment)" class="float-right btn btn-primary">Un-Enroll</button>
     </li>
   </ul>
 

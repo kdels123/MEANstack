@@ -31,6 +31,15 @@ export class ProfileComponent implements OnInit {
     this.service.logout().then(() => this.router.navigate(['login']));
   }
 
+  unenroll(enrollment) {
+    // alert(enrollment._id);
+    console.log(enrollment);
+    this.sectionService.unenrollStudentInSection(enrollment)
+      .then(() => {this.sectionService.findSectionsForStudent()
+        .then(sections => this.sections = sections);
+    });
+    }
+
   ngOnInit() {
     this.service
       .profile()

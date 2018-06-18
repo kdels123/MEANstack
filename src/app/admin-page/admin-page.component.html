@@ -1,4 +1,6 @@
 <div class="container-fluid">
+  <a (click)="logout()" class="float-right" style="color: dodgerblue">Logout</a>
+  <a routerLink="/admin/profile" class="float-right" style="color: dodgerblue">Profile &nbsp; </a>
   <h1>Admin Page</h1>
   <div>
     <div class="row">
@@ -23,12 +25,23 @@
                  placeholder="Seats available"
                  class="form-control">
           <br/>
-          <button (click)="createSection(sectionName, seats)" class="btn btn-success btn-block">Add Section</button>
+          <button (click)="createSection(sectionName, seats)" class="btn btn-success btn-block">Add Section To Course</button>
+          <button (click)="updateSection(sectionName, seats)" class="btn btn-success btn-block">Update Section</button>
+
           <br/>
 
           <li *ngFor="let section of sections" class="list-group-item">
-            {{section.name}} {{section.seats}}
-              <button (click)="delete(section)" type="button" class="btn btn-sm btn-danger float-right">Delete</button>
+
+            <button (click)="renderSection(section.name, section.seats, section._id)" class="btn btn-link">{{section.name}} {{section.seats}}</button>
+
+            <div class="btn-toolbar float-right" role="toolbar" aria-label="Toolbar with button groups">
+              <div class="btn-group mr-2" role="group" aria-label="Second group">
+                <button (click)="delete(section)" type="button" class="btn btn-sm btn-primary float-right">Edit</button>
+              </div>
+              <div class="btn-group" role="group" aria-label="Third group">
+                <button (click)="delete(section)" type="button" class="btn btn-sm btn-danger float-right">Delete</button>
+              </div>
+            </div>
           </li>
         </ul>
       </div>

@@ -11,10 +11,13 @@ export class CourseGridComponent implements OnInit {
 
   constructor(private service: CourseServiceClient) { }
 
+  studentCourses: Course[] = [];
   courses: Course[] = [];
+
 
   ngOnInit() {
     this.service.findAllCourses().then(courses => this.courses = courses);
+    this.service.findCoursesForStudents().then( studentCourses => this.studentCourses = studentCourses);
   }
 
 }

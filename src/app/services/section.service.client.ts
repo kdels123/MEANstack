@@ -26,11 +26,38 @@ export class SectionServiceClient {
     });
   }
 
+  updateSection(name, seats, sectionId) {
+    const section = {sectionId, name, seats};
+    const url = 'http://localhost:4000/api/section/' + sectionId;
+    console.log(section);
+    return fetch(url, {
+      method: 'POST',
+      body: JSON.stringify(section),
+      credentials: 'include',
+      headers: {
+        'content-type': 'application/json'
+      }
+    });
+  }
+
   enrollStudentInSection(sectionId) {
     const url = 'http://localhost:4000/api/section/' + sectionId + '/enrollment';
     return fetch(url, {
       method: 'post',
       credentials: 'include'
+    });
+  }
+
+  unenrollStudentInSection(enrollment) {
+    console.log(enrollment._id);
+    const url = 'http://localhost:4000/api/enrollment/' + enrollment._id;
+    return fetch(url, {
+      method: 'delete',
+      body: JSON.stringify(enrollment),
+      credentials: 'include',
+      headers: {
+        'content-type': 'application/json'
+      }
     });
   }
 
@@ -40,5 +67,6 @@ export class SectionServiceClient {
       credentials: 'include'
     }).then(response => response.json());
   }
+
 
 }
