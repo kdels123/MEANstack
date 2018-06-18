@@ -16,7 +16,7 @@ export class LoginComponent implements OnInit {
     if (username === 'admin' && password === 'admin') {
       this.service.login(username, password)
         .then(() => {
-          this.router.navigate(['profile/admin']);
+          this.router.navigate(['admin/profile']);
         });
     } else {
       this.service.login(username, password)

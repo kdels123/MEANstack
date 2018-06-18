@@ -7,6 +7,7 @@ import {LoginComponent} from './login/login.component';
 import {SectionListComponent} from './section-list/section-list.component';
 import {CourseNavigatorComponent} from './course-navigator/course-navigator.component';
 import {AdminProfileComponent} from './admin-profile/admin-profile.component';
+import {AdminPageComponent} from './admin-page/admin-page.component';
 document.body.style.backgroundColor = 'lightgrey'
 
 
@@ -17,7 +18,8 @@ const appRoutes: Routes = [
   {path: 'login', component: LoginComponent},
   {path: 'register', component: RegisterComponent},
   {path: 'profile', component: ProfileComponent},
-  {path: 'profile/admin', component: AdminProfileComponent},
+  {path: 'admin/profile', component: AdminProfileComponent},
+  {path: 'admin/page', component: AdminPageComponent},
   {path: 'course/:courseId', component: CourseViewerComponent},
   {path: 'course/:courseId/section', component: SectionListComponent},
   {path: 'course/:courseId/module/:moduleId', component: CourseViewerComponent},

@@ -1,14 +1,6 @@
 <div class="container-fluid">
   <h1>Sections for Course: {{courseId}}</h1>
-  <input [(ngModel)]="sectionName"
-         placeholder="Section Name"
-         class="form-control">
-  <input [(ngModel)]="seats"
-         placeholder="Seats available"
-         class="form-control">
-  <br/>
-  <button (click)="createSection(sectionName, seats)" class="btn btn-success btn-block">Add Section</button>
-  <br/>
+
   <ul class="list-group">
     <li *ngFor="let section of sections" class="list-group-item">
       {{section.name}} {{section.seats}}
@@ -17,9 +9,7 @@
         <div class="btn-group mr-2" role="group" aria-label="Second group">
           <button (click)="enroll(section)" type="button" class="btn btn-sm btn-primary">Enroll</button>
         </div>
-        <div class="btn-group" role="group" aria-label="Third group">
-          <button (click)="delete(section)" type="button" class="btn btn-sm btn-danger">Delete</button>
-        </div>
+
       </div>
     </li>
   </ul>

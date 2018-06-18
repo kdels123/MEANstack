@@ -19,22 +19,10 @@ export class SectionListComponent implements OnInit {
   seats = '';
   courseId = '';
   sections = [];
+
   loadSections(courseId) {
     this.courseId = courseId;
     this.service.findSectionsForCourse(courseId).then(sections => this.sections = sections);
-  }
-
-  createSection( sectionName, seats) {
-    this.service.createSection(this.courseId, sectionName, seats)
-      .then(() => {
-        this.loadSections(this.courseId);
-      });
-  }
-
-  delete(section) {
-    this.service.deleteSection(section._id).then(() => {
-      this.loadSections(this.courseId);
-    });
   }
 
   enroll(section) {
@@ -43,8 +31,6 @@ export class SectionListComponent implements OnInit {
       this.router.navigate(['profile']);
     });
   }
-
-
 
   ngOnInit() {
   }
