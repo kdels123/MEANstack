@@ -25,16 +25,21 @@ export class AdminPageComponent implements OnInit {
   sections = [];
   sectionName = '';
   seats = '';
+  courseTitle = '';
 
-  loadSectionsForCourse(courseId) {
+  loadSectionsForCourse(courseId, courseTitle) {
     this.courseId = courseId;
+    this.courseTitle = courseTitle;
     this.sectionService.findSectionsForCourse(courseId).then(sections => this.sections = sections);
   }
 
   createSection(sectionName, seats) {
+    if (sectionName === '') {
+      sectionName = this.courseTitle + ' Section 1';
+    }
     this.sectionService.createSection(this.courseId, sectionName, seats)
       .then(() => {
-        this.loadSectionsForCourse(this.courseId);
+        this.loadSectionsForCourse(this.courseId, this.courseTitle);
       });
   }
 
@@ -42,13 +47,13 @@ export class AdminPageComponent implements OnInit {
     // alert(this.sectionId);
     this.sectionService.updateSection(sectionName, seats, this.sectionId)
       .then(() => {
-        this.loadSectionsForCourse(this.courseId);
+        this.loadSectionsForCourse(this.courseId, this.courseTitle);
       });
   }
 
   delete(section) {
     this.sectionService.deleteSection(section._id).then(() => {
-      this.loadSectionsForCourse(this.courseId);
+      this.loadSectionsForCourse(this.courseId, this.courseTitle);
     });
   }
 

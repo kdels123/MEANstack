@@ -1,6 +1,7 @@
 <div class="container-fluid">
   <a (click)="logout()" class="float-right" style="color: dodgerblue">Logout</a>
   <a routerLink="/admin/profile" class="float-right" style="color: dodgerblue">Profile &nbsp; </a>
+  <a routerLink="/home" class="float-right" style="color: dodgerblue">Home &nbsp; </a>
   <h1>Admin Page</h1>
   <div>
     <div class="row">
@@ -9,7 +10,7 @@
           <li class="list-group-item active">Courses</li>
               <li *ngFor="let course of courses"
                   class="list-group-item"
-                  (click)="loadSectionsForCourse(course.id)">
+                  (click)="loadSectionsForCourse(course.id, course.title)">
                 {{course.title}}
               </li>
             </ul>

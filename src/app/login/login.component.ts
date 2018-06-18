@@ -22,7 +22,7 @@ export class LoginComponent implements OnInit {
       this.service.login(username, password)
         .then(() => {
           this.router.navigate(['profile']);
-        });
+        }).catch(() => alert('Username and/or Password are not Valid'));
     }
   }
 
