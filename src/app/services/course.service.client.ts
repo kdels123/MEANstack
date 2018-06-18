@@ -11,11 +11,4 @@ export class CourseServiceClient {
     return fetch(this.COURSE_URL + '/' + courseId).then(response => response.json());
   }
 
-  findCoursesForStudents() {
-    const url = 'http://localhost:4000/api/student/course';
-    return fetch(url, {
-      credentials: 'include'
-    }).then(response => response.json());
-  }
-
 }

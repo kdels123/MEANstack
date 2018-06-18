@@ -3,7 +3,6 @@ import {User} from '../models/user.model.client';
 import {UserServiceClient} from '../services/user.service.client';
 import {Router} from '@angular/router';
 import {SectionServiceClient} from '../services/section.service.client';
-import {last} from 'rxjs/operators';
 
 @Component({
   selector: 'app-profile',
@@ -18,7 +17,6 @@ export class ProfileComponent implements OnInit {
 
   user: User = new User();
   username;
-  password;
   firstName;
   sections = [];
 
