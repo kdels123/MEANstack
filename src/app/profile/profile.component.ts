@@ -18,6 +18,8 @@ export class ProfileComponent implements OnInit {
   user: User = new User();
   username;
   firstName;
+  lastName;
+  email;
   sections = [];
 
   update(username, firstName, lastName, email) {
@@ -42,7 +44,9 @@ export class ProfileComponent implements OnInit {
     this.service
       .profile()
       .then(user => this.username = user.username)
-      .then(user => this.firstName = user.firstName);
+      .then(user => this.firstName = user.firstName)
+      .then(user => this.lastName = user.lastName)
+      .then(user => this.email = user.email);
 
     this.sectionService.findSectionsForStudent().then(sections => this.sections = sections);
   }
