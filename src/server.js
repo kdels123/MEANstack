@@ -5,11 +5,11 @@ const path = require('path');
 const app = express();
 
 // Serve only the static files form the dist directory
-app.use(express.static('./assets/dist/webdev-summer1-angular-kdelsener'));
+app.use(express.static('./dist/webdev-summer1-angular-kdelsener'));
 
 app.get('/*', function(req,res) {
 
-  res.sendFile(path.join(__dirname,'./assets/dist/webdev-summer1-angular-kdelsener/index.html'));
+  res.sendFile(path.join(__dirname,'./dist/webdev-summer1-angular-kdelsener/index.html'));
 });
 
 // Start the app by listening on the default Heroku port
