@@ -1,5 +1,5 @@
 export class SectionServiceClient {
-  SECTION_URL = 'http://localhost:4000/api/course/COURSEID/section';
+  SECTION_URL = 'https://cs5610-nodejs-kdelsener.herokuapp.com/api/course/COURSEID/section';
 
   findSectionsForCourse(courseId) {
     return fetch(this.SECTION_URL.replace('COURSEID', courseId))
