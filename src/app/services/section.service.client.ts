@@ -19,7 +19,7 @@ export class SectionServiceClient {
   }
 
   deleteSection(sectionId) {
-    const url = 'http://localhost:4000/api/section/' + sectionId;
+    const url = 'https://cs5610-nodejs-kdelsener.herokuapp.com/api/section/' + sectionId;
     return fetch(url, {
       method: 'delete',
       credentials: 'include'
@@ -28,7 +28,7 @@ export class SectionServiceClient {
 
   updateSection(name, seats, sectionId) {
     const section = {sectionId, name, seats};
-    const url = 'http://localhost:4000/api/section/' + sectionId;
+    const url = 'https://cs5610-nodejs-kdelsener.herokuapp.com/api/section/' + sectionId;
     console.log(section);
     return fetch(url, {
       method: 'POST',
@@ -41,7 +41,7 @@ export class SectionServiceClient {
   }
 
   enrollStudentInSection(sectionId) {
-    const url = 'http://localhost:4000/api/section/' + sectionId + '/enrollment';
+    const url = 'https://cs5610-nodejs-kdelsener.herokuapp.com/api/section/' + sectionId + '/enrollment';
     return fetch(url, {
       method: 'post',
       credentials: 'include'
@@ -50,7 +50,7 @@ export class SectionServiceClient {
 
   unenrollStudentInSection(enrollment) {
     console.log(enrollment._id);
-    const url = 'http://localhost:4000/api/enrollment/' + enrollment._id;
+    const url = 'https://cs5610-nodejs-kdelsener.herokuapp.com/api/enrollment/' + enrollment._id;
     return fetch(url, {
       method: 'delete',
       body: JSON.stringify(enrollment),
@@ -62,7 +62,7 @@ export class SectionServiceClient {
   }
 
   findSectionsForStudent() {
-    const url = 'http://localhost:4000/api/student/section';
+    const url = 'https://cs5610-nodejs-kdelsener.herokuapp.com/api/student/section';
     return fetch(url, {
       credentials: 'include'
     }).then(response => response.json());
