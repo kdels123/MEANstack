@@ -12,8 +12,7 @@ export class SectionListComponent implements OnInit {
   constructor(private service: SectionServiceClient,
               private router: Router,
               private route: ActivatedRoute) {
-    this.route.params.subscribe(params => this.loadSections(params['courseId']));
-  }
+   }
 
   sectionName = '';
   seats = '';

@@ -7,7 +7,6 @@ export class CourseServiceClient {
   findAllCourses() {
     return fetch( this.COURSE_API_URL ).then(response => response.json());
   }
-
   findCourseById(courseId) {
     return fetch(this.COURSE_API_URL + '/' + courseId).then(response => response.json());
   }

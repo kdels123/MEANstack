@@ -11,6 +11,7 @@ export class LoginComponent implements OnInit {
 
   username;
   password;
+
   login(username, password) {
     console.log([username, password]);
     if (username === 'admin' && password === 'admin') {
